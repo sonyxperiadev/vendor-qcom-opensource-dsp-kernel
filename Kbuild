@@ -17,6 +17,11 @@ include $(DSP_ROOT)/config/niobedsp.conf
 LINUXINCLUDE += -include $(DSP_ROOT)/config/niobedspconf.h
 endif
 
+ifeq ($(CONFIG_ARCH_PARROT), y)
+include $(DSP_ROOT)/config/parrotdsp.conf
+LINUXINCLUDE += -include $(DSP_ROOT)/config/parrotdspconf.h
+endif
+
 LINUXINCLUDE += -I$(DSP_ROOT)/include/linux
 LINUXINCLUDE += -I$(DSP_ROOT)/include/uapi
 
