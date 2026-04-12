@@ -1,3 +1,7 @@
+ifeq ($(DSP_ROOT),)
+DSP_ROOT := $(srctree)/techpack/dsp
+endif
+
 # ported from Android.mk
 $(info within KBUILD file KBUILD_EXTRA_SYMBOLS = $(KBUILD_EXTRA_SYMBOLS))
 
