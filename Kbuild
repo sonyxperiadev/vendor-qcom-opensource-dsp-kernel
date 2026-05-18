@@ -2,6 +2,11 @@ ifeq ($(DSP_ROOT),)
 DSP_ROOT := $(srctree)/techpack/dsp
 endif
 
+ifeq ($(CONFIG_ARCH_WAIPIO), y)
+include $(DSP_ROOT)/config/waipiodsp.conf
+LINUXINCLUDE += -include $(DSP_ROOT)/config/waipiodspconf.h
+endif
+
 ifeq ($(CONFIG_ARCH_PINEAPPLE), y)
 include $(DSP_ROOT)/config/pineappledsp.conf
 LINUXINCLUDE += -include $(DSP_ROOT)/config/pineappledspconf.h
