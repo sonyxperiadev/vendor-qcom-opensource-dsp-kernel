@@ -7,6 +7,11 @@ include $(DSP_ROOT)/config/waipiodsp.conf
 LINUXINCLUDE += -include $(DSP_ROOT)/config/waipiodspconf.h
 endif
 
+ifeq ($(CONFIG_ARCH_KALAMA), y)
+include $(DSP_ROOT)/config/kalamadsp.conf
+LINUXINCLUDE += -include $(DSP_ROOT)/config/kalamadspconf.h
+endif
+
 ifeq ($(CONFIG_ARCH_PINEAPPLE), y)
 include $(DSP_ROOT)/config/pineappledsp.conf
 LINUXINCLUDE += -include $(DSP_ROOT)/config/pineappledspconf.h

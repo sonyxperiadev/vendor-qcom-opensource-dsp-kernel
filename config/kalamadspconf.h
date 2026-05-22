@@ -1,0 +1,1 @@
+#define CONFIG_QCOM_FASTRPC 1
